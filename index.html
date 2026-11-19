@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق أبرار - الإسلامي الشامل</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        header {
+            background-color: #1b5e20;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 { margin: 0; font-size: 24px; }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #1b5e20;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>تطبيق أبرار</h1>
+        <p>رفيقك الإسلامي اليومي</p>
+    </header>
+
+    <div class="card">
+        <h3>🌙 الصلاة على النبي (ﷺ)</h3>
+        <p id="salawat-counter">عدد مرات الصلاة: 0</p>
+        <button onclick="incrementSalawat()">صلِ على النبي</button>
+    </div>
+
+    <div class="card">
+        <h3>📖 القرآن الكريم والأذكار</h3>
+        <p>قريباً سيتم إضافة مواقيت الصلاة والأذكار والقبلة هنا.</p>
+    </div>
+
+    <script>
+        let count = 0;
+        function incrementSalawat() {
+            count++;
+            document.getElementById('salawat-counter').innerText = "عدد مرات الصلاة: " + count;
+        }
+    </script>
+
+</body>
+</html>
