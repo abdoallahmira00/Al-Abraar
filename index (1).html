@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>أبرار</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f1;--ink:#12261f;--g:#0b5d4b;--gold:#a87a1c;--card:#fff;--line:#d5ded8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a16;--ink:#e6efe9;--g:#4fb89a;--gold:#d9a93f;--card:#14261f;--line:#25403a}}
+:root[data-theme="dark"]{--bg:#0d1a16;--ink:#e6efe9;--g:#4fb89a;--gold:#d9a93f;--card:#14261f;--line:#25403a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.9 Amiri,'Noto Naskh Arabic',serif}
+.w{max-width:640px;margin:auto;padding:12px 14px 40px}
+header{display:flex;align-items:center;gap:12px;padding:8px 0 14px}
+header svg{width:100%;max-width:300px;height:auto}header small{margin-top:4px}
+h1{font:600 34px/1 'Reem Kufi',Amiri,serif;margin:0;color:var(--g)}
+header small{display:block;font-size:14px;color:var(--gold)}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:16px;padding:2px 14px;border-radius:20px}
+nav button.on{background:var(--g);color:var(--bg);border-color:var(--g)}
+button:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.p{display:none;padding-top:14px}.p.on{display:block}
+.c{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 10px}
+.c b{color:var(--g)}.src{font-size:15px;color:var(--gold);margin-top:4px}.n{float:left;font-size:14px;border:1px solid var(--line);border-radius:12px;padding:0 9px}
+select,.b{font:inherit;font-size:17px;width:100%;padding:4px 10px;margin:0 0 10px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px}
+.b{background:var(--g);color:var(--bg);border:0;font-weight:700;padding:6px 10px}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:2px 4px}.row.nx{color:var(--g);font-weight:700}
+#cd{font:600 26px 'Reem Kufi',serif;color:var(--g);text-align:center;margin:6px 0 12px}
+#cp{width:230px;height:230px;margin:10px auto;display:block;border:2px solid var(--line);border-radius:50%;position:relative}
+#ar{position:absolute;inset:0;transition:transform .2s}
+#toast{position:fixed;inset:auto 14px calc(14px + env(safe-area-inset-bottom,0px));background:var(--g);color:var(--bg);padding:10px 14px;border-radius:10px;display:none;z-index:9;text-align:center}
+a.b{display:block;text-align:center;text-decoration:none}.rm{color:var(--gold);font-variant-numeric:tabular-nums;min-width:90px;text-align:left}#hf{border:0}
+</style></head><body><div class="w">
+<header style="flex-direction:column;text-align:center"><svg viewBox="0 0 300 120" role="img" aria-label="أبرار"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#d9a93f"/><stop offset="1" stop-color="#f4d77e"/></linearGradient></defs><rect x="4" y="4" width="292" height="112" rx="26" fill="var(--g)"/><rect x="12" y="12" width="276" height="96" rx="20" fill="none" stroke="url(#gg)" stroke-width="1.5"/><path d="M62 28a26 26 0 1 0 0 48 21 21 0 1 1 0-48z" fill="url(#gg)"/><circle cx="72" cy="40" r="4" fill="url(#gg)"/><text x="186" y="82" text-anchor="middle" font-family="'Reem Kufi',Amiri,serif" font-size="68" fill="url(#gg)">أبرار</text></svg><small>صلاة · قرآن · ذكر</small></header>
+<nav id="nv"></nav>
+
+<section class="p on" id="t0">
+<div class="c" id="dt" style="text-align:center"></div><select id="ct" aria-label="البلد"></select>
+<button class="b" id="gps">استخدم موقعي (GPS)</button>
+<div id="cd"></div><div id="tm"></div>
+<div class="c"><b>الصوت</b><br><label>مستوى الصوت<input type="range" id="vl" min="1" max="6" step=".5" style="width:100%"></label><button class="b" id="ts">تجربة صوت الأذان</button><button class="b" id="en">تفعيل التنبيه والصوت</button></div><div class="c"><b>تنبيهات الصلاة</b><br>
+<b>الصلاة على النبي ﷺ كل:</b><select id="sl"><option value="0">متوقف</option><option value="5">5 دقائق</option><option value="10">10 دقائق</option><option value="15">15 دقيقة</option><option value="30">30 دقيقة</option><option value="60">ساعة</option><option value="120">ساعتين</option></select>
+<div class="src">ملاحظة: التنبيه يعمل والصفحة مفتوحة في المتصفح.</div></div>
+</section>
+
+<section class="p" id="t1">
+<button class="b" id="qb">تحديد القبلة (افتح GPS)</button>
+<div id="qi" style="text-align:center"></div>
+<div id="cp"><svg id="ar" viewBox="0 0 100 100"><path d="M50 6 62 40H38z" fill="var(--gold)"/><rect x="46" y="40" width="8" height="40" fill="var(--g)"/><text x="50" y="96" font-size="9" text-anchor="middle" fill="var(--ink)">القبلة</text></svg></div>
+</section>
+
+<section class="p" id="t2">
+<div class="c">المصحف الكامل والتفسير يُفتحان من المصدر الموثوق:</div>
+<a class="b" target="_blank" rel="noopener" href="https://quran.com/ar">افتح المصحف كاملاً</a>
+<a class="b" target="_blank" rel="noopener" href="https://tafsir.app/">التفسير (الطبري، ابن كثير، السعدي…)</a>
+</section>
+
+<section class="p" id="t3"></section>
+<section class="p" id="t4"></section>
+<div class="c" style="text-align:center;margin-top:18px"><b>دعاء</b><br>اللهم اجعلنا من الأبرار، واغفر لنا ولوالدينا ولجميع المسلمين، وتقبّل منا الصلاة والصيام والقيام، وبلّغنا رضاك والجنة.<div class="src" style="margin-top:10px">المطور: عبدالله ميرة — Abdoallah Mira<br><a href="tel:01500552191" style="color:var(--g)" dir="ltr">01500552191</a></div></div><div id="toast"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s),R=Math.PI/180,sn=x=>Math.sin(x*R),cs=x=>Math.cos(x*R);
+let S={};try{S=JSON.parse(localStorage.getItem('abrar')||'{}')}catch(e){}
+const sv=()=>{try{localStorage.setItem('abrar',JSON.stringify(S))}catch(e){}};
+// [name,lat,lng,tz,fajr,isha]
+const C=[['مصر – القاهرة',30.04,31.24,'Africa/Cairo',19.5,17.5],['السعودية – مكة',21.42,39.83,'Asia/Riyadh',18.5,17.5],['الإمارات – دبي',25.2,55.27,'Asia/Dubai',18.2,18.2],['الكويت',29.37,47.98,'Asia/Kuwait',18,17.5],['قطر – الدوحة',25.29,51.53,'Asia/Qatar',18,17.5],['الأردن – عمّان',31.95,35.93,'Asia/Amman',18,17],['فلسطين – القدس',31.77,35.21,'Asia/Jerusalem',18,17],['العراق – بغداد',33.31,44.36,'Asia/Baghdad',18,17],['السودان – الخرطوم',15.5,32.56,'Africa/Khartoum',19.5,17.5],['ليبيا – طرابلس',32.89,13.19,'Africa/Tripoli',18,17],['تونس',36.8,10.18,'Africa/Tunis',18,17],['الجزائر',36.75,3.06,'Africa/Algiers',18,17],['المغرب – الرباط',34.02,-6.84,'Africa/Casablanca',19,17],['تركيا – إسطنبول',41.01,28.98,'Europe/Istanbul',18,17],['بريطانيا – لندن',51.5,-0.12,'Europe/London',18,17],['أمريكا – نيويورك',40.71,-74,'America/New_York',15,15]];
+const PN=['الفجر','الشروق','الظهر','العصر','المغرب','العشاء'];
+function times(c){const n=new Date(),d=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate(),12)/864e5-10957.5,g=(357.529+.98560028*d)%360,q=(280.459+.98564736*d)%360,L=q+1.915*sn(g)+.02*sn(2*g),e=23.439-4e-7*d,ra=((Math.atan2(cs(e)*sn(L),cs(L))/R/15)%24+24)%24,dec=Math.asin(sn(e)*sn(L))/R;let eq=q/15-ra;eq=((eq+12)%24+24)%24-12;const dh=12-c[2]/15-eq,T=a=>Math.acos(Math.max(-1,Math.min(1,(sn(a)-sn(c[1])*sn(dec))/(cs(c[1])*cs(dec)))))/R/15,as=Math.atan(1/(1+Math.tan(Math.abs(c[1]-dec)*R)))/R,b=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate());return[dh-T(-c[4]),dh-T(-.833),dh,dh+T(as),dh+T(-.833),dh+T(-c[5])].map(h=>b+h*36e5)}
+const cur=()=>S.gps&&S.sel==='gps'?S.gps:C[S.sel|0]||C[0];
+const fm=(ms,tz)=>new Intl.DateTimeFormat('ar-EG',{hour:'numeric',minute:'2-digit',timeZone:tz}).format(ms);
+function draw(){const c=cur(),t=times(c),now=Date.now();let nx=t.findIndex(x=>x>now);const rm=(x,n)=>{const s=Math.max(0,Math.floor((x-n)/1e3));return String(s/3600|0).padStart(2,'0')+':'+String(s/60%60|0).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};$('#tm').innerHTML=t.map((x,i)=>`<div class="row${i===nx?' nx':''}"><span>${PN[i]}</span><span>${fm(x,c[3])}</span><span class="rm">${x>now?'بعد '+rm(x,now):'مضت'}</span></div>`).join('');const D=new Date();$('#dt').innerHTML=new Intl.DateTimeFormat('ar-EG-u-ca-islamic-umalqura',{dateStyle:'full'}).format(D)+'<br>'+new Intl.DateTimeFormat('ar-EG',{dateStyle:'full'}).format(D);if(nx<0){$('#cd').textContent='انتهت صلوات اليوم';return}const s=Math.floor((t[nx]-now)/1e3),p=v=>String(v).padStart(2,'0');$('#cd').textContent=`${PN[nx]} بعد ${p(s/3600|0)}:${p(s/60%60|0)}:${p(s%60)}`}
+// sound
+let ac;function snd(p){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();let t=ac.currentTime;p.forEach(([f,d])=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;o.connect(g);g.connect(ac.destination);g.gain.setValueAtTime(+(S.vol||3),t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.start(t);o.stop(t+d);t+=d*.9})}catch(e){}}
+const AD=[[523,.5],[659,.5],[784,.5],[1047,1.2],[784,.5],[1047,1.6]],SL=[[880,.3],[1175,.3],[1568,.8],[1175,.3],[1568,1]];
+function alert2(t,b,p){snd(p);try{navigator.vibrate&&navigator.vibrate([300,120,300])}catch(e){}try{Notification.permission==='granted'&&new Notification(t,{body:b,requireInteraction:true})}catch(e){}const o=$('#toast');o.textContent=t+' — '+b;o.style.display='block';setTimeout(()=>o.style.display='none',15e3)}
+$('#en').onclick=async()=>{snd([[600,.15]]);try{await Notification.requestPermission()}catch(e){}S.on=1;sv();toast2('تم التفعيل')};
+function toast2(m){const o=$('#toast');o.textContent=m;o.style.display='block';setTimeout(()=>o.style.display='none',2500)}
+setInterval(()=>{draw();if(!S.on)return;const c=cur(),t=times(c),n=Date.now(),k=new Date().toDateString();[0,2,3,4,5].forEach(i=>{if(n>=t[i]&&n<t[i]+6e4&&S.last!==k+i){S.last=k+i;sv();alert2('حان وقت صلاة '+PN[i],'حيّ على الصلاة',AD)}})},1e3);
+let st;function arm(){clearInterval(st);const m=+S.sl;if(m)st=setInterval(()=>alert2('اللهم صلِّ وسلّم على نبينا محمد','صلّوا على النبي ﷺ',SL),m*6e4)}
+$('#vl').value=S.vol||3;$('#vl').oninput=e=>{S.vol=e.target.value;sv()};$('#ts').onclick=()=>{S.on=1;sv();snd(AD)};$('#sl').value=S.sl||0;$('#sl').onchange=e=>{S.sl=e.target.value;sv();snd([[500,.1]]);arm()};arm();
+// countries
+$('#ct').innerHTML=C.map((c,i)=>`<option value="${i}">${c[0]}</option>`).join('')+'<option value="gps">موقعي الحالي</option>';
+$('#ct').value=S.sel==null?0:S.sel;$('#ct').onchange=e=>{S.sel=e.target.value;sv();draw()};
+function loc(cb){if(!navigator.geolocation)return toast2('المتصفح لا يدعم تحديد الموقع');navigator.geolocation.getCurrentPosition(p=>cb(p.coords.latitude,p.coords.longitude),()=>toast2('اسمح بالوصول للموقع من إعدادات المتصفح'),{enableHighAccuracy:true,timeout:15e3})}
+$('#gps').onclick=()=>loc((la,lo)=>{S.gps=['موقعي',la,lo,Intl.DateTimeFormat().resolvedOptions().timeZone,18,17];S.sel='gps';sv();$('#ct').value='gps';draw()});
+// qibla
+let qa=null,hd=0;const qr=()=>{if(qa!=null)$('#ar').style.transform=`rotate(${qa-hd}deg)`};
+function ori(e){const h=e.webkitCompassHeading!=null?e.webkitCompassHeading:(e.alpha!=null?360-e.alpha:null);if(h!=null){hd=h;qr()}}
+$('#qb').onclick=async()=>{try{if(DeviceOrientationEvent.requestPermission)await DeviceOrientationEvent.requestPermission()}catch(e){}
+addEventListener('deviceorientationabsolute',ori);addEventListener('deviceorientation',ori);
+loc((la,lo)=>{const dl=(39.8262-lo)*R;qa=(Math.atan2(Math.sin(dl),cs(la)*Math.tan(21.4225*R)-sn(la)*Math.cos(dl))/R+360)%360;$('#qi').innerHTML=`موقعك: ${la.toFixed(4)}, ${lo.toFixed(4)}<br>اتجاه القبلة: <b>${qa.toFixed(1)}°</b> من الشمال`;qr()})};
+// content
+const AZ=[['سبحان الله وبحمده','100 مرة','«من قال سبحان الله وبحمده في يوم مائة مرة حُطّت خطاياه وإن كانت مثل زبد البحر» — متفق عليه'],
+['سبحان الله وبحمده، سبحان الله العظيم','','«كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن» — متفق عليه'],
+['لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير','10 مرات','من قالها مائة مرة في يوم كانت له عدل عشر رقاب — متفق عليه'],
+['بسم الله الذي لا يضر مع اسمه شيء في الأرض ولا في السماء وهو السميع العليم','3 مرات','«لم يضره شيء» — رواه أبو داود والترمذي'],
+['أستغفر الله وأتوب إليه','100 مرة','«إني لأستغفر الله وأتوب إليه في اليوم مائة مرة» — رواه مسلم'],
+['لا حول ولا قوة إلا بالله','','«كنز من كنوز الجنة» — متفق عليه'],
+['قل هو الله أحد، قل أعوذ برب الفلق، قل أعوذ برب الناس','3 مرات','«تكفيك من كل شيء» صباحاً ومساءً — رواه أبو داود والترمذي'],
+['حسبي الله لا إله إلا هو عليه توكلت وهو رب العرش العظيم','7 مرات','الدليل: سورة التوبة، آية 129'],
+['اللهم صلِّ وسلّم على نبينا محمد','','«من صلى عليّ صلاة صلى الله عليه بها عشراً» — رواه مسلم'],
+['باسمك اللهم أموت وأحيا','عند النوم','رواه البخاري'],
+['الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور','عند الاستيقاظ','رواه البخاري'],
+['بسم الله توكلت على الله ولا حول ولا قوة إلا بالله','عند الخروج','«هُديتَ وكُفيتَ ووُقيتَ» — رواه أبو داود والترمذي'],
+['الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة','بعد الطعام','«غُفر له ما تقدم من ذنبه» — رواه أبو داود والترمذي']];
+const HD=[['إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى','1','رواه البخاري ومسلم'],
+['من حسن إسلام المرء تركه ما لا يعنيه','12','رواه الترمذي وغيره، وهو حديث حسن'],
+['لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه','13','رواه البخاري ومسلم'],
+['من كان يؤمن بالله واليوم الآخر فليقل خيراً أو ليصمت','15','رواه البخاري ومسلم'],
+['لا تغضب','16','رواه البخاري'],
+['اتق الله حيثما كنت، وأتبع السيئة الحسنة تمحها، وخالق الناس بخلق حسن','18','رواه الترمذي، وقال: حديث حسن']];
+$('#t3').innerHTML=AZ.map(a=>`<div class="c">${a[1]?`<span class="n">${a[1]}</span>`:''}<b>${a[0]}</b><div class="src">الدليل: ${a[2]}</div></div>`).join('');
+const HX={n:HD.map(a=>[a[0],'الأربعون النووية، حديث '+a[1]+' — '+a[2]]),
+b:[['المسلم من سلم المسلمون من لسانه ويده','البخاري، كتاب الإيمان'],['خيركم من تعلّم القرآن وعلّمه','البخاري، فضائل القرآن'],['لا يؤمن أحدكم حتى أكون أحب إليه من والده وولده والناس أجمعين','البخاري، كتاب الإيمان'],['من يرد الله به خيراً يفقهه في الدين','البخاري، كتاب العلم'],['اتقوا النار ولو بشق تمرة','البخاري، كتاب الزكاة'],['ليس الشديد بالصُّرعة، إنما الشديد الذي يملك نفسه عند الغضب','البخاري، كتاب الأدب'],['من لا يَرحم لا يُرحم','البخاري، كتاب الأدب'],['الكلمة الطيبة صدقة','البخاري، كتاب الجهاد']],
+m:[['الدين النصيحة','مسلم، كتاب الإيمان'],['الطُّهور شطر الإيمان','مسلم، كتاب الطهارة'],['من سلك طريقاً يلتمس فيه علماً سهّل الله له به طريقاً إلى الجنة','مسلم، كتاب الذكر والدعاء'],['اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعاً لأصحابه','مسلم، صلاة المسافرين'],['إن الله جميل يحب الجمال','مسلم، كتاب الإيمان'],['من دلّ على خير فله مثل أجر فاعله','مسلم، كتاب الإمارة'],['لا تحقرنّ من المعروف شيئاً ولو أن تلقى أخاك بوجه طَلْق','مسلم، كتاب البر والصلة'],['إذا مات ابن آدم انقطع عمله إلا من ثلاث: صدقة جارية، أو علم يُنتفع به، أو ولد صالح يدعو له','مسلم، كتاب الوصية']],
+t:[['تبسّمك في وجه أخيك لك صدقة','الترمذي، البر والصلة — حسن'],['الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء','الترمذي — حسن صحيح'],['أكمل المؤمنين إيماناً أحسنهم خلقاً','الترمذي — حسن صحيح'],['ليس المؤمن بالطعّان ولا اللعّان ولا الفاحش ولا البذيء','الترمذي — حسن'],['الدعاء هو العبادة','الترمذي — حسن صحيح'],['كل ابن آدم خطّاء، وخير الخطّائين التوّابون','الترمذي — حسن'],['ما ملأ آدمي وعاءً شراً من بطنه','الترمذي — حسن'],['الصدقة تطفئ الخطيئة كما يطفئ الماء النار','الترمذي — حسن صحيح']]};
+const HN={n:'الأربعون النووية',b:'البخاري',m:'مسلم',t:'الترمذي'};
+$('#t4').innerHTML='<nav id="hf">'+Object.keys(HN).map(k=>`<button data-k="${k}">${HN[k]}</button>`).join('')+'</nav><div id="hb" style="padding-top:10px"></div>';
+function hr(k){$('#hb').innerHTML=HX[k].map(a=>`<div class="c"><b>${a[0]}</b><div class="src">${a[1]}</div></div>`).join('');document.querySelectorAll('#hf button').forEach(b=>b.classList.toggle('on',b.dataset.k===k))}
+$('#hf').onclick=e=>{if(e.target.dataset.k)hr(e.target.dataset.k)};hr('n');
+const TB=['الصلاة','القبلة','المصحف','الأذكار','الأحاديث'];
+$('#nv').innerHTML=TB.map((t,i)=>`<button data-i="${i}" class="${i?'':'on'}">${t}</button>`).join('');
+$('#nv').onclick=e=>{const i=e.target.dataset.i;if(i==null)return;document.querySelectorAll('.p').forEach((p,j)=>p.classList.toggle('on',j==i));document.querySelectorAll('#nv button').forEach((b,j)=>b.classList.toggle('on',j==i))};
+draw();
+</script></body></html>
